@@ -585,22 +585,22 @@ Send transaction to one Bitcoin node on localhost port 4009:
 "Show the details of a block header.",
 
 """\
-Usage: sx showblkhead FILENAME
+Usage: sx showblkhead [-j] FILENAME
 
 'showblkhead' allows inspecting of block headers.
 
-  $ sx showblkhead headerfile.blk
-  hash: 4d25b18ed094ad68f75f21692d8540f45ceb90b240a521b8f191e95d8b6b8bb0
-  version: 1  locktime: 0
-  Input:
-    previous output:
-  97e06e49dfdd26c5a904670971ccf4c7fe7d9da53cb379bf9b442fc9427080b3:0
-    script:   sequence: 4294967295
-  Output:
-    value: 90000
-    script: dup hash160 [ 18c0bd8d1818f1bf99cb1df2269c645318ef7b73 ] equalverify
-  checksig
-    address: 13Ft7SkreJY9D823NPm4t6D1cBqLYTJtAe
+  -j, --json                 Enable json parseable output.
+
+Example:
+
+  $ sx fetch-block-header 210000 | sx showblkhead
+  hash: 000000000000048b95347e83192f69cf0366076336c639f9b7228e9ba171342e
+  version: 2
+  previous_block_hash: 00000000000000f3819164645360294b5dee7f2e846001ac9f41a70b7a9a3de1
+  merkle: 3cdd40a60823b1c7356d0987078e9426724c5b3ab439c2d80ad2bdd620e603d8
+  timestamp: 1354116278
+  bits: 436527338
+  nonce: 4069828196
 \
 """
 ),
